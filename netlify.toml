@@ -1,9 +1,9 @@
-# netlify.toml
 [build]
   functions = "netlify/functions"
 
-[[functions]]
+[functions]
   directory = "netlify/functions"
 
 [functions.updatePrices]
   schedule = "*/30 * * * *"
+  included_files = ["prices.json"]
