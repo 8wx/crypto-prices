@@ -3,4 +3,4 @@
 
 [functions]
   [functions.updatePrices]
-   schedule = "@hourly" 
+  schedule = "* * * * *"
