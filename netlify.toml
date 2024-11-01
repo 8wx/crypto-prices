@@ -1,3 +1,5 @@
 [build]
   functions = "netlify/functions"
 
+[functions]
+  updatePrices = { schedule = "0 * * * *" } # This cron expression runs the function hourly
