@@ -1,8 +1,5 @@
 [build]
   functions = "netlify/functions"
 
-[functions]
-  directory = "netlify/functions"
-
 [functions.updatePrices]
   schedule = "@hourly"
