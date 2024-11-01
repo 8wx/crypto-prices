@@ -1,5 +1,5 @@
 [build]
   functions = "netlify/functions"
 
-[functions."updatePrices"]
-  schedule = "@hourly"  # This cron expression will invoke the function hourly
+[functions.updatePrices]
+  schedule = "@hourly" 
