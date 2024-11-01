@@ -1,0 +1,57 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        .price-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .price {
+            font-size: 24px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .last-updated {
+            color: #666;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crypto Prices</h1>
+    
+    <div class="price-card">
+        <h2>Bitcoin</h2>
+        <div class="price" id="bitcoin-price">Loading...</div>
+    </div>
+
+    <div class="price-card">
+        <h2>Ethereum</h2>
+        <div class="price" id="ethereum-price">Loading...</div>
+    </div>
+
+    <div class="last-updated" id="last-updated"></div>
+    <div class="error" id="error-message">Error loading prices. Please try again later.</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

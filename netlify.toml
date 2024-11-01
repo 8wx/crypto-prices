@@ -1,0 +1,9 @@
+# netlify.toml
+[build]
+  functions = "netlify/functions"
+
+[[functions]]
+  directory = "netlify/functions"
+
+[functions.updatePrices]
+  schedule = "*/30 * * * *"
