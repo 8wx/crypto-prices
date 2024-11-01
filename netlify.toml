@@ -5,4 +5,4 @@
   directory = "netlify/functions"
 
 [functions.updatePrices]
-  schedule = "*/1 * * * *"
+  schedule = "* * * * *"
