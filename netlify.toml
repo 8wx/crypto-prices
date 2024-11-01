@@ -1,14 +1,8 @@
-[
-build
-]
+[build]
   functions = "netlify/functions"
 
-[
-functions
-]
+[functions]
   directory = "netlify/functions"
 
-[
-functions.updatePrices
-]
+[functions.updatePrices]
   schedule = "* * * * *"
