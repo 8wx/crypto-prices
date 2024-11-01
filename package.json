@@ -1,5 +1,8 @@
 {
   "name": "crypto-prices",
   "version": "1.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "@octokit/rest": "^19.0.7",
+    "axios": "^1.3.4"
+  }
 }
