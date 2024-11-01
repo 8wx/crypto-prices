@@ -8,29 +8,24 @@ async function getCryptoPrices() {
         
         const data = await response.json();
         
-        // Validate the data structure
-        if (!data.prices || !data.prices.bitcoin || !data.prices.ethereum) {
-            throw new Error('Invalid data structure in prices.json');
-        }
-        
         // Update Bitcoin price
         const bitcoinPrice = data.prices.bitcoin.usd;
         document.getElementById('bitcoin-price').textContent = 
-            bitcoinPrice === 0 ? 'Loading...' : `$${bitcoinPrice.toLocaleString()}`;
+            `$${bitcoinPrice.toLocaleString()}`;
         
         // Update Ethereum price
         const ethereumPrice = data.prices.ethereum.usd;
         document.getElementById('ethereum-price').textContent = 
-            ethereumPrice === 0 ? 'Loading...' : `$${ethereumPrice.toLocaleString()}`;
+            `$${ethereumPrice.toLocaleString()}`;
         
-        // Update timestamp
+        // Update timestamps
+        const lastUpdated = new Date(data.lastUpdated);
+        const timeAgo = getTimeAgo(lastUpdated);
+        
         document.getElementById('last-updated').textContent = 
-            `Last updated: ${new Date(data.lastUpdated).toLocaleString()}`;
+            `Last updated: ${timeAgo} (${lastUpdated.toLocaleString()})`;
         
         document.getElementById('error-message').style.display = 'none';
-        
-        // Log success for debugging
-        console.log('Prices updated successfully:', data);
     } catch (error) {
         console.error('Error details:', error);
         document.getElementById('error-message').textContent = 
@@ -39,8 +34,24 @@ async function getCryptoPrices() {
     }
 }
 
+function getTimeAgo(date) {
+    const seconds = Math.floor((new Date() - date) / 1000);
+    
+    let interval = Math.floor(seconds / 3600);
+    if (interval >= 1) {
+        return interval === 1 ? '1 hour ago' : `${interval} hours ago`;
+    }
+    
+    interval = Math.floor(seconds / 60);
+    if (interval >= 1) {
+        return interval === 1 ? '1 minute ago' : `${interval} minutes ago`;
+    }
+    
+    return 'just now';
+}
+
 // Fetch prices immediately when page loads
 getCryptoPrices();
 
-// Refresh prices every minute
+// Refresh the display every minute
 setInterval(getCryptoPrices, 60000);
