@@ -1,11 +1,11 @@
 {
-    "lastUpdated": "2024-01-01T00:00:00.000Z",
-    "prices": {
-      "bitcoin": {
-        "usd": 0
-      },
-      "ethereum": {
-        "usd": 0
-      }
+  "lastUpdated": "2024-11-01T22:29:47.874Z",
+  "prices": {
+    "bitcoin": {
+      "usd": 69210
+    },
+    "ethereum": {
+      "usd": 2503.12
     }
   }
+}
